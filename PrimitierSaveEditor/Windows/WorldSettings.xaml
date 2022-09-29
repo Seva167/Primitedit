@@ -1,0 +1,25 @@
+﻿<Window x:Class="PrimitierSaveEditor.WorldSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimitierSaveEditor"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Title="World Settings" Height="160" Width="250" ResizeMode="NoResize">
+    <Grid>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Edit">
+                <CheckBox x:Name="dangEditBox" Content="Allow editing critical data" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,0,0,0"/>
+            </MenuItem>
+        </Menu>
+
+        <Label Content="Primitier Version" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,29,0,0"/>
+        <TextBox x:Name="primVer" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="110,33,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="PrimVer_TextChanged"/>
+        <Label Content="Seed" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="seed" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="110,60,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Seed_TextChanged"/>
+        <Label Content="Time" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="time" HorizontalAlignment="Left" Margin="110,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Time_TextChanged"/>
+
+    </Grid>
+</Window>

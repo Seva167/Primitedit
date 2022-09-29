@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Authors>Seva167</Authors>
+    <Company />
+    <Product>Primitier Save Editor</Product>
+    <Copyright>Seva167</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ButtonImages\Block.png" />
+    <None Remove="ButtonImages\Chunk.png" />
+    <None Remove="ButtonImages\CreateBlock.png" />
+    <None Remove="ButtonImages\CreateGroup.png" />
+    <None Remove="ButtonImages\DeleteBlock.png" />
+    <None Remove="ButtonImages\DeleteGroup.png" />
+    <None Remove="ButtonImages\Group.png" />
+    <None Remove="ButtonImages\NormalView.png" />
+    <None Remove="ButtonImages\RainfallView.png" />
+    <None Remove="ButtonImages\TempView.png" />
+    <None Remove="icon.png" />
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cyotek.Drawing.BitmapFont" Version="2.0.4" />
+    <PackageReference Include="HelixToolkit" Version="2.22.0" />
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.22.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SharpDX.D3DCompiler" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct3D11" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct3D9" Version="4.2.0" />
+    <PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ButtonImages\Block.png" />
+    <Resource Include="ButtonImages\Chunk.png" />
+    <Resource Include="ButtonImages\CreateBlock.png" />
+    <Resource Include="ButtonImages\CreateGroup.png" />
+    <Resource Include="ButtonImages\DeleteBlock.png" />
+    <Resource Include="ButtonImages\DeleteGroup.png" />
+    <Resource Include="ButtonImages\Group.png" />
+    <Resource Include="ButtonImages\NormalView.png" />
+    <Resource Include="ButtonImages\RainfallView.png" />
+    <Resource Include="ButtonImages\TempView.png" />
+    <Resource Include="icon.png" />
+    <Resource Include="Windows\Images\github.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Colors\biomeColors.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Colors\substanceColors.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Gizmos\camera_gizmo.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Gizmos\camera_gizmo_tex.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Gizmos\player_tex.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Gizmos\respawn_pos_tex.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
