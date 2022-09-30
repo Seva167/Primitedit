@@ -17,6 +17,8 @@ namespace PrimitierSaveEditor.Controllers
 
         public static void OpenSaveFile(string filename)
         {
+            Logger.LogInfo($"Opening {filename}");
+
             FileStream fs = null;
             GZipStream gz = null;
             MemoryStream dstMs = null;
@@ -59,6 +61,8 @@ namespace PrimitierSaveEditor.Controllers
 
         public static void SaveSaveFile(string filename)
         {
+            Logger.LogInfo($"Saving {filename}");
+
             MemoryStream ms = null;
             GZipStream gz = null;
             FileStream dstFs = null;

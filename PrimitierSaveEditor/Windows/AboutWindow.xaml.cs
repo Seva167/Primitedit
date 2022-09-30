@@ -23,6 +23,6 @@ namespace PrimitierSaveEditor
 
         private void OpenGithubClick(object sender, RoutedEventArgs e) => Utils.OpenLink("https://github.com/Seva167");
 
-        public Version Version => Assembly.GetExecutingAssembly().GetName().Version;
+        public string Version => "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
     }
 }

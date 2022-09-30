@@ -8,16 +8,11 @@ namespace PrimitierSaveEditor.Controllers
 {
     public static class SettingsController
     {
-        static string SaveDir { get; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Primitedit\\";
-
         public static Settings AppSettings { get; private set; }
 
         static SettingsController()
         {
-            if (!Directory.Exists(SaveDir))
-                Directory.CreateDirectory(SaveDir);
-
-            if (!File.Exists(SaveDir + "config.json"))
+            if (!File.Exists(App.SettDir + "config.json"))
             {
                 AppSettings = new Settings();
                 Save();
@@ -29,12 +24,12 @@ namespace PrimitierSaveEditor.Controllers
         public static void Save()
         {
             string json = JsonConvert.SerializeObject(AppSettings, Formatting.Indented);
-            File.WriteAllText(SaveDir + "config.json", json);
+            File.WriteAllText(App.SettDir + "config.json", json);
         }
 
         static void Load()
         {
-            string json = File.ReadAllText(SaveDir + "config.json");
+            string json = File.ReadAllText(App.SettDir + "config.json");
             AppSettings = JsonConvert.DeserializeObject<Settings>(json);
 
             if (AppSettings == null)

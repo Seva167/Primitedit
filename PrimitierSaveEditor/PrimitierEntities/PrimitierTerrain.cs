@@ -22,7 +22,11 @@ namespace PrimitierSaveEditor.Entities.Primitier
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
 
-            Transform = new TranslateTransform3D(Data.x * 252f, 0, Data.z * 252f);
+            Matrix3D transformMat = new Matrix3D();
+            transformMat.ScaleAt(new Vector3D(4.063, 1 / 1045d, 4.063), new Point3D(0.5, 0.5, 0.5));
+            transformMat.Translate(new Vector3D(Data.x * 256, 0, Data.z * 256));
+            MatrixTransform3D terrTransform = new MatrixTransform3D(transformMat);
+            Transform = terrTransform;
 
             mainWindow.viewport.InvalidateRender();
         }

@@ -89,7 +89,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Property" Binding="{Binding Path=Property, Mode=OneWay}" Width="120" CanUserSort="False"/>
                 <DataGridTextColumn Header="Value" Binding="{Binding Path=Value}" Width="190" CanUserSort="False"/>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Visibility="{Binding Path=EnableButton}" Content="Edit" Click="EditButtonClick"/>

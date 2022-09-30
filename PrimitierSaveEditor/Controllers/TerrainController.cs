@@ -59,7 +59,7 @@ namespace PrimitierSaveEditor.Controllers
                 {
                     for (int j = 0; j < SaveController.Save.terrains[k].heightMap.Length / 64; j++)
                     {
-                        points[i, j] = new Vector3(j * 4f, SaveController.Save.terrains[k].heightMap[index] / 1024f, i * 4f);
+                        points[i, j] = new Vector3(j, SaveController.Save.terrains[k].heightMap[index], i);
                         colors[index] = Utils.GetColorForBiome(SaveController.Save.terrains[k].materialMap[index]);
                         index++;
                     }
@@ -68,7 +68,7 @@ namespace PrimitierSaveEditor.Controllers
                 mb.AddRectangularMesh(points);
                 HelixToolkit.Wpf.SharpDX.MeshGeometry3D mesh = mb.ToMesh();
                 mesh.Colors = new Color4Collection(colors);
-                var terrainMesh = new PrimitierTerrain(SaveController.Save.terrains[k])
+                PrimitierTerrain terrainMesh = new PrimitierTerrain(SaveController.Save.terrains[k])
                 {
                     Geometry = mesh,
                     Material = vertexColMat,

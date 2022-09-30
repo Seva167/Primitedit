@@ -123,32 +123,38 @@ namespace PrimitierSaveEditor
                     catch (System.IO.IOException ex)
                     {
                         MessageBox.Show(ex.Message, "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Save reading error: {ex.Message}{ex.StackTrace}");
                         return;
                     }
                     catch (UnauthorizedAccessException ex)
                     {
                         MessageBox.Show(ex.Message, "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Save reading error: {ex.Message}{ex.StackTrace}");
                         return;
                     }
-                    catch (System.IO.InvalidDataException)
+                    catch (System.IO.InvalidDataException ex)
                     {
                         MessageBox.Show("Error decompressing save", "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Error decompressing save: {ex.Message}{ex.StackTrace}");
                         return;
                     }
                     catch (Newtonsoft.Json.JsonException ex)
                     {
                         MessageBox.Show($"Error processing save json data: {ex.Message}", "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Error processing save json: {ex.Message}{ex.StackTrace}");
                         return;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Unknown error while reading save: {ex.Message}", "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Unknown save reading error: {ex.Message}{ex.StackTrace}");
                         return;
                     }
 
                     if (SaveController.Save == null || SaveController.Save.version == null)
                     {
                         MessageBox.Show("Invalid save data", "Save reading error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Save data is invalid");
                         return;
                     }
 
@@ -214,16 +220,19 @@ namespace PrimitierSaveEditor
                     catch (System.IO.IOException ex)
                     {
                         MessageBox.Show(ex.Message, "Save writing error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Save writing error: {ex.Message}{ex.StackTrace}");
                         return false;
                     }
                     catch (UnauthorizedAccessException ex)
                     {
                         MessageBox.Show(ex.Message, "Save writing error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Save writing error: {ex.Message}{ex.StackTrace}");
                         return false;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Unknown error while writing save: {ex.Message}", "Save writing error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Logger.LogError($"Unknown save writing error: {ex.Message}{ex.StackTrace}");
                         return false;
                     }
 
