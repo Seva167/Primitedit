@@ -1,0 +1,236 @@
+{
+    "AncientAlloy": {
+        "Red": 0.3226237,
+        "Green": 0.4107131,
+        "Blue": 0.4716981,
+        "Alpha": 1
+    },
+    "AncientEngine": {
+        "Red": 0.3226237,
+        "Green": 0.4107131,
+        "Blue": 0.4716981,
+        "Alpha": 1
+    },
+    "AncientLightweightPlastic": {
+        "Red": 0.12922749,
+        "Green": 0.18499087,
+        "Blue": 0.2264151,
+        "Alpha": 1
+    },
+    "AncientPlastic": {
+        "Red": 0.12922749,
+        "Green": 0.18499087,
+        "Blue": 0.2264151,
+        "Alpha": 1
+    },
+    "Apple": {
+        "Red": 0.8679245,
+        "Green": 0.24286956,
+        "Blue": 0.13510147,
+        "Alpha": 1
+    },
+    "Bread": {
+        "Red": 0.8679245,
+        "Green": 0.6050237,
+        "Blue": 0.18422928,
+        "Alpha": 1
+    },
+    "Brick": {
+        "Red": 0.7019608,
+        "Green": 0.3743791,
+        "Blue": 0.21058825,
+        "Alpha": 1
+    },
+    "Cactus": {
+        "Red": 1,
+        "Green": 1,
+        "Blue": 1,
+        "Alpha": 1
+    },
+    "Clay": {
+        "Red": 0.6392157,
+        "Green": 0.5642732,
+        "Blue": 0.51137257,
+        "Alpha": 1
+    },
+    "ConiferWood": {
+        "Red": 0.6037736,
+        "Green": 0.45544085,
+        "Blue": 0.24777503,
+        "Alpha": 1
+    },
+    "CookedRedSlime": {
+        "Red": 1,
+        "Green": 0.5234491,
+        "Blue": 0.5137255,
+        "Alpha": 1
+    },
+    "CookedSlime": {
+        "Red": 0.514151,
+        "Green": 0.7570755,
+        "Blue": 1,
+        "Alpha": 1
+    },
+    "DryGrass": {
+        "Red": 0.85098046,
+        "Green": 0.72156864,
+        "Blue": 0.3921569,
+        "Alpha": 1
+    },
+    "Glass": {
+        "Red": 0.25098038,
+        "Green": 0.5019608,
+        "Blue": 0.3764706,
+        "Alpha": 0.2
+    },
+    "Gold": {
+        "Red": 1,
+        "Green": 0.9411765,
+        "Blue": 0,
+        "Alpha": 1
+    },
+    "Grass": {
+        "Red": 0.47734958,
+        "Green": 0.8018868,
+        "Blue": 0.34420612,
+        "Alpha": 1
+    },
+    "GreenSlime": {
+        "Red": 0.25,
+        "Green": 1,
+        "Blue": 0,
+        "Alpha": 0.7490196
+    },
+    "Gunpowder": {
+        "Red": 0.35,
+        "Green": 0.35,
+        "Blue": 0.35,
+        "Alpha": 1
+    },
+    "Hematite": {
+        "Red": 0.5568628,
+        "Green": 0.28235295,
+        "Blue": 0.19607843,
+        "Alpha": 1
+    },
+    "Ice": {
+        "Red": 0.8,
+        "Green": 1,
+        "Blue": 1,
+        "Alpha": 0.5019608
+    },
+    "Iron": {
+        "Red": 0.6698113,
+        "Green": 0.6698113,
+        "Blue": 0.6698113,
+        "Alpha": 1
+    },
+    "Leaf": {
+        "Red": 0.30587462,
+        "Green": 0.6415094,
+        "Blue": 0.1724813,
+        "Alpha": 1
+    },
+    "Monument": {
+        "Red": 0,
+        "Green": 0,
+        "Blue": 0,
+        "Alpha": 1
+    },
+    "Niter": {
+        "Red": 1,
+        "Green": 0.9678735,
+        "Blue": 0.9009434,
+        "Alpha": 1
+    },
+    "Pinecone": {
+        "Red": 0.6037736,
+        "Green": 0.45544085,
+        "Blue": 0.24777503,
+        "Alpha": 1
+    },
+    "Pyrite": {
+        "Red": 0.78431374,
+        "Green": 0.78431374,
+        "Blue": 0.39215687,
+        "Alpha": 1
+    },
+    "QuartzSand": {
+        "Red": 1,
+        "Green": 0.89285713,
+        "Blue": 0.75,
+        "Alpha": 1
+    },
+    "RawRubber": {
+        "Red": 0.9,
+        "Green": 0.60672414,
+        "Blue": 0.27,
+        "Alpha": 1
+    },
+    "RedSlime": {
+        "Red": 1,
+        "Green": 0,
+        "Blue": 0,
+        "Alpha": 0.7490196
+    },
+    "Rubber": {
+        "Red": 0.1,
+        "Green": 0.1,
+        "Blue": 0.1,
+        "Alpha": 1
+    },
+    "RubberSeed": {
+        "Red": 0.77254903,
+        "Green": 0.68448716,
+        "Blue": 0.54773724,
+        "Alpha": 1
+    },
+    "Rubberwood": {
+        "Red": 0.77254903,
+        "Green": 0.68448716,
+        "Blue": 0.54773724,
+        "Alpha": 1
+    },
+    "Silver": {
+        "Red": 0.9411765,
+        "Green": 0.9411765,
+        "Blue": 0.9411765,
+        "Alpha": 1
+    },
+    "Slime": {
+        "Red": 0,
+        "Green": 0.49842924,
+        "Blue": 1,
+        "Alpha": 0.7490196
+    },
+    "Stone": {
+        "Red": 0.754717,
+        "Green": 0.754717,
+        "Blue": 0.754717,
+        "Alpha": 1
+    },
+    "Sulfur": {
+        "Red": 1,
+        "Green": 1,
+        "Blue": 0.5019608,
+        "Alpha": 1
+    },
+    "Wheat": {
+        "Red": 0.85098046,
+        "Green": 0.72156864,
+        "Blue": 0.3921569,
+        "Alpha": 1
+    },
+    "WheatStalk": {
+        "Red": 0.85098046,
+        "Green": 0.72156864,
+        "Blue": 0.3921569,
+        "Alpha": 1
+    },
+    "Wood": {
+        "Red": 0.8018868,
+        "Green": 0.57634556,
+        "Blue": 0.33664113,
+        "Alpha": 1
+    }
+}

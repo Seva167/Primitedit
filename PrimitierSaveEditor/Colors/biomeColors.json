@@ -1,0 +1,50 @@
+{
+    "ColdMeadow": {
+        "Red": 0.5107927,
+        "Green": 0.745283,
+        "Blue": 0.41131186,
+        "Alpha": 1
+    },
+    "DryMeadow": {
+        "Red": 0.66431355,
+        "Green": 0.8392157,
+        "Blue": 0.41568628,
+        "Alpha": 1
+    },
+    "Meadow": {
+        "Red": 0.47734958,
+        "Green": 0.8018868,
+        "Blue": 0.34420612,
+        "Alpha": 1
+    },
+    "Rainforest": {
+        "Red": 0.4076336,
+        "Green": 0.75,
+        "Blue": 0.26250002,
+        "Alpha": 1
+    },
+    "Sand": {
+        "Red": 1,
+        "Green": 0.9418632,
+        "Blue": 0.8632076,
+        "Alpha": 1
+    },
+    "Snow": {
+        "Red": 0.9224471,
+        "Green": 0.9490196,
+        "Blue": 0.9490196,
+        "Alpha": 1
+    },
+    "Stone": {
+        "Red": 0.754717,
+        "Green": 0.754717,
+        "Blue": 0.754717,
+        "Alpha": 1
+    },
+    "Sulfur": {
+        "Red": 1,
+        "Green": 1,
+        "Blue": 0.5019608,
+        "Alpha": 1
+    }
+}
