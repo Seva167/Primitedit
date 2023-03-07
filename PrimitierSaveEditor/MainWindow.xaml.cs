@@ -18,6 +18,8 @@ namespace PrimitierSaveEditor
 {
     public partial class MainWindow : Window
     {
+        const string dialogFilter = "Primitier Save file (*.dat)|*.dat|Primitier Uncompressed save file (*.json)|*.json|Any File (*.*)|*.*";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -100,7 +102,7 @@ namespace PrimitierSaveEditor
 
             OpenFileDialog openDialog = new OpenFileDialog()
             {
-                Filter = "Primitier Save file (*.dat)|*.dat|Any File (*.*)|*.*"
+                Filter = dialogFilter
             };
 
             if (openDialog.ShowDialog().Value)
@@ -195,7 +197,7 @@ namespace PrimitierSaveEditor
 
             SaveFileDialog saveDialog = new SaveFileDialog()
             {
-                Filter = "Primitier Save file (*.dat)|*.dat|Any File (*.*)|*.*"
+                Filter = dialogFilter
             };
 
             if ((editFilename != null && !forceDialog) || saveDialog.ShowDialog().Value)

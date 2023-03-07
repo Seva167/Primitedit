@@ -17,7 +17,9 @@ namespace PrimitierSaveEditor.Controllers
 
         public static void OpenSaveFile(string filename)
         {
-            Logger.LogInfo($"Opening {filename}");
+            bool isUncompressed = filename.EndsWith("json");
+
+            Logger.LogInfo($"Opening {(isUncompressed ? "uncompressed " : "")}{filename}");
 
             FileStream fs = null;
             GZipStream gz = null;
@@ -25,13 +27,21 @@ namespace PrimitierSaveEditor.Controllers
 
             try
             {
-                fs = File.OpenRead(filename);
-                gz = new GZipStream(fs, CompressionMode.Decompress);
-                dstMs = new MemoryStream();
-                gz.CopyTo(dstMs);
+                string json = null;
+                if (!isUncompressed)
+                {
+                    fs = File.OpenRead(filename);
+                    gz = new GZipStream(fs, CompressionMode.Decompress);
+                    dstMs = new MemoryStream();
+                    gz.CopyTo(dstMs);
 
-                byte[] decompressedBytes = dstMs.ToArray();
-                string json = Encoding.UTF8.GetString(decompressedBytes);
+                    byte[] decompressedBytes = dstMs.ToArray();
+                    json = Encoding.UTF8.GetString(decompressedBytes);
+                }
+                else
+                {
+                    json = File.ReadAllText(filename);
+                }
 
                 Save = JsonConvert.DeserializeObject<SaveData>(json);
 
@@ -61,7 +71,9 @@ namespace PrimitierSaveEditor.Controllers
 
         public static void SaveSaveFile(string filename)
         {
-            Logger.LogInfo($"Saving {filename}");
+            bool isUncompressed = filename.EndsWith("json");
+
+            Logger.LogInfo($"Saving {(isUncompressed ? "uncompressed " : "")}{filename}");
 
             MemoryStream ms = null;
             GZipStream gz = null;
@@ -76,14 +88,22 @@ namespace PrimitierSaveEditor.Controllers
                 Save.saveEditorMetadata.cameraDir = mainWindow.viewport.Camera.LookDirection;
 
                 string json = JsonConvert.SerializeObject(Save, Formatting.None);
-                byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
 
-                ms = new MemoryStream(jsonBytes);
-                dstFs = File.Create(filename);
+                if (!isUncompressed)
+                {
+                    byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
 
-                gz = new GZipStream(dstFs, CompressionMode.Compress);
+                    ms = new MemoryStream(jsonBytes);
+                    dstFs = File.Create(filename);
 
-                ms.CopyTo(gz);
+                    gz = new GZipStream(dstFs, CompressionMode.Compress);
+
+                    ms.CopyTo(gz);
+                }
+                else
+                {
+                    File.WriteAllText(filename, json);
+                }
 
                 mainWindow.IsDirty = false;
             }
