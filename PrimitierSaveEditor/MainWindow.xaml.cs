@@ -30,7 +30,9 @@ namespace PrimitierSaveEditor
 
             UpdateMemLoop();
             AutoSaveLoop();
-            CheckForUpdates();
+
+            if (SettingsController.AppSettings.AutoUpdateCheck)
+                CheckForUpdates();
         }
 
         string editFilename = null;
@@ -58,9 +60,6 @@ namespace PrimitierSaveEditor
 
         private async void CheckForUpdates()
         {
-            if (!SettingsController.AppSettings.AutoUpdateCheck)
-                return;
-
             UpdateController.UpdateInfo info = await UpdateController.GetUpdateInfo();
             if (info == null || !info.IsNewerVersion())
                 return;
