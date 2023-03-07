@@ -1,23 +1,13 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using PrimitierSaveEditor.Entities;
 using HelixToolkit.Wpf.SharpDX;
-using SharpDX;
 using System.Windows.Media.Media3D;
-using System.Drawing;
 using System.Diagnostics;
 using System.Collections;
 using PrimitierSaveEditor.Entities.Primitier;
@@ -28,6 +18,8 @@ namespace PrimitierSaveEditor
 {
     public partial class MainWindow : Window
     {
+        const string dialogFilter = "Primitier Save file (*.dat)|*.dat|Primitier Uncompressed save file (*.json)|*.json|Any File (*.*)|*.*";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -66,6 +58,9 @@ namespace PrimitierSaveEditor
 
         private async void CheckForUpdates()
         {
+            if (!SettingsController.AppSettings.AutoUpdateCheck)
+                return;
+
             UpdateController.UpdateInfo info = await UpdateController.GetUpdateInfo();
             if (info == null || !info.IsNewerVersion())
                 return;
@@ -107,7 +102,7 @@ namespace PrimitierSaveEditor
 
             OpenFileDialog openDialog = new OpenFileDialog()
             {
-                Filter = "Primitier Save file (*.dat)|*.dat|Any File (*.*)|*.*"
+                Filter = dialogFilter
             };
 
             if (openDialog.ShowDialog().Value)
@@ -202,7 +197,7 @@ namespace PrimitierSaveEditor
 
             SaveFileDialog saveDialog = new SaveFileDialog()
             {
-                Filter = "Primitier Save file (*.dat)|*.dat|Any File (*.*)|*.*"
+                Filter = dialogFilter
             };
 
             if ((editFilename != null && !forceDialog) || saveDialog.ShowDialog().Value)
@@ -532,7 +527,7 @@ namespace PrimitierSaveEditor
 
         private void CheckForUpdatesClick(object sender, RoutedEventArgs e) => CheckForUpdates();
 
-        private void HowToUseClick(object sender, RoutedEventArgs e) => Utils.OpenLink("https://github.com/Seva167/Primitedit/");
+        private void HowToUseClick(object sender, RoutedEventArgs e) => Utils.OpenLink("https://github.com/Seva167/Primitedit/wiki");
 
         private void ReportIssueClick(object sender, RoutedEventArgs e) => Utils.OpenLink("https://github.com/Seva167/Primitedit/issues");
     }
