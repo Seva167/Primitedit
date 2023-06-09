@@ -6,9 +6,9 @@
         "Alpha": 1
     },
     "AncientDrone": {
-        "Red": 0.3226237,
-        "Green": 0.4107131,
-        "Blue": 0.4716981,
+        "Red": 0.12922749,
+        "Green": 0.18499087,
+        "Blue": 0.2264151,
         "Alpha": 1
     },
     "AncientEngine": {
@@ -29,10 +29,22 @@
         "Blue": 0.2264151,
         "Alpha": 1
     },
+    "AncientSuicideDrone": {
+        "Red": 0.12922749,
+        "Green": 0.18499087,
+        "Blue": 0.2264151,
+        "Alpha": 1
+    },
     "Apple": {
         "Red": 0.8679245,
         "Green": 0.24286956,
         "Blue": 0.13510147,
+        "Alpha": 1
+    },
+    "AppleSection": {
+        "Red": 1,
+        "Green": 0.989769,
+        "Blue": 0.8443396,
         "Alpha": 1
     },
     "Battery": {
@@ -41,10 +53,22 @@
         "Blue": 1,
         "Alpha": 1
     },
+    "BossCore": {
+        "Red": 0.3226237,
+        "Green": 0.4107131,
+        "Blue": 0.4716981,
+        "Alpha": 1
+    },
     "Bread": {
         "Red": 0.8679245,
         "Green": 0.6050237,
         "Blue": 0.18422928,
+        "Alpha": 1
+    },
+    "BreadSection": {
+        "Red": 1,
+        "Green": 0.97453874,
+        "Blue": 0.9198113,
         "Alpha": 1
     },
     "Brick": {
@@ -54,9 +78,9 @@
         "Alpha": 1
     },
     "Cactus": {
-        "Red": 0.0705,
-        "Green": 0.2509,
-        "Blue": 0.0705,
+        "Red": 1,
+        "Green": 1,
+        "Blue": 1,
         "Alpha": 1
     },
     "Clay": {
@@ -71,6 +95,18 @@
         "Blue": 0.24777503,
         "Alpha": 1
     },
+    "ConiferWoodSectionH": {
+        "Red": 0.9,
+        "Green": 0.792,
+        "Blue": 0.576,
+        "Alpha": 1
+    },
+    "ConiferWoodSectionV": {
+        "Red": 0.9019608,
+        "Green": 0.810236,
+        "Blue": 0.6313726,
+        "Alpha": 1
+    },
     "CookedRedSlime": {
         "Red": 1,
         "Green": 0.5234491,
@@ -81,6 +117,12 @@
         "Red": 0.514151,
         "Green": 0.7570755,
         "Blue": 1,
+        "Alpha": 1
+    },
+    "CookedYellowSlime": {
+        "Red": 1,
+        "Green": 1,
+        "Blue": 0.51,
         "Alpha": 1
     },
     "DryGrass": {
@@ -203,22 +245,34 @@
         "Blue": 0,
         "Alpha": 0.7490196
     },
+    "RepairFiller": {
+        "Red": 0.9019608,
+        "Green": 0.75746673,
+        "Blue": 0.1794902,
+        "Alpha": 0.7490196
+    },
     "Rubber": {
         "Red": 0.1,
         "Green": 0.1,
         "Blue": 0.1,
         "Alpha": 1
     },
-    "RubberSeed": {
+    "Rubberwood": {
         "Red": 0.77254903,
         "Green": 0.68448716,
         "Blue": 0.54773724,
         "Alpha": 1
     },
-    "Rubberwood": {
-        "Red": 0.77254903,
-        "Green": 0.68448716,
-        "Blue": 0.54773724,
+    "RubberwoodSectionH": {
+        "Red": 1,
+        "Green": 0.9736842,
+        "Blue": 0.9,
+        "Alpha": 1
+    },
+    "RubberwoodSectionV": {
+        "Red": 1,
+        "Green": 0.992,
+        "Blue": 0.95,
         "Alpha": 1
     },
     "Silver": {
@@ -269,16 +323,28 @@
         "Blue": 0.3921569,
         "Alpha": 1
     },
-    "WheatStalk": {
-        "Red": 0.85098046,
-        "Green": 0.72156864,
-        "Blue": 0.3921569,
-        "Alpha": 1
-    },
     "Wood": {
         "Red": 0.8018868,
         "Green": 0.57634556,
         "Blue": 0.33664113,
         "Alpha": 1
+    },
+    "WoodSectionH": {
+        "Red": 1,
+        "Green": 0.94035304,
+        "Blue": 0.76886797,
+        "Alpha": 1
+    },
+    "WoodSectionV": {
+        "Red": 1,
+        "Green": 0.9699357,
+        "Blue": 0.8160377,
+        "Alpha": 1
+    },
+    "YellowSlime": {
+        "Red": 1,
+        "Green": 1,
+        "Blue": 0,
+        "Alpha": 0.7490196
     }
 }
