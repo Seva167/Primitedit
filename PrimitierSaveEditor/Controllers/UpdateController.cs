@@ -11,14 +11,14 @@ namespace PrimitierSaveEditor.Controllers
 {
     public static class UpdateController
     {
-        static HttpClient http = new HttpClient();
+        static HttpClient http = new();
         const string releasesUrl = "https://api.github.com/repos/Seva167/Primitedit/releases";
 
         public static async Task<UpdateInfo> GetUpdateInfo()
         {
             try
             {
-                HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Get, releasesUrl);
+                HttpRequestMessage req = new(HttpMethod.Get, releasesUrl);
                 req.Headers.Add("user-agent", "Primitedit");
 
                 HttpResponseMessage res = await http.SendAsync(req);
@@ -52,7 +52,7 @@ namespace PrimitierSaveEditor.Controllers
             public bool IsNewerVersion()
             {
                 Version curVer = Assembly.GetExecutingAssembly().GetName().Version;
-                Version newVer = new Version(Tag.TrimStart('V', 'v'));
+                Version newVer = new(Tag.TrimStart('V', 'v'));
 
                 return newVer > curVer;
             }

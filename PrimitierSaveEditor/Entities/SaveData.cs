@@ -92,14 +92,15 @@ namespace PrimitierSaveEditor.Entities
 
             public enum Mat
             {
-                Meadow,
-                Sand,
-                Stone,
-                Snow,
-                ColdMeadow,
-                DryMeadow,
-                Sulfur,
-                Rainforest
+                Meadow = 0,
+                Sand = 1,
+                Stone = 2,
+                Snow = 3,
+                ColdMeadow = 4,
+                DryMeadow = 5,
+                Sulfur = 6,
+                Rainforest = 7,
+                Fort = 8
             }
         }
     }

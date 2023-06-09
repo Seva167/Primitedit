@@ -90,7 +90,12 @@ namespace PrimitierSaveEditor.Entities
             LED = 43,
             ElectricMotor = 44,
             Battery = 45,
-            AncientLightweightPlastic = 46
+            AncientLightweightPlastic = 46,
+            YellowSlime = 47,
+            CookedYellowSlime = 48,
+            RepairFiller = 49,
+            AncientSuicideDrone = 50,
+            BossCore = 51
         }
 
         public enum SectionState
