@@ -19,6 +19,8 @@ namespace PrimitierSaveEditor.Entities
 
         public Substance substance;
 
+        public CubeName name;
+
         public List<int> connections;
 
         public float temperature;
@@ -95,7 +97,12 @@ namespace PrimitierSaveEditor.Entities
             CookedYellowSlime = 48,
             RepairFiller = 49,
             AncientSuicideDrone = 50,
-            BossCore = 51
+            BossCore = 51,
+            MixedAcid = 52,
+            Nitrocellulose = 53,
+            RocketEngine = 54,
+            MoonRock = 55,
+            MoonMonument = 56
         }
 
         public enum SectionState
@@ -164,5 +171,25 @@ namespace PrimitierSaveEditor.Entities
 
             return sb.ToString();
         }
+    }
+
+    public enum CubeName
+    {
+        None,
+        RespawnPoint,
+        BeamTurret,
+        HomingBeamTurret,
+        DroneSpawner,
+        SuicideDroneSpawner,
+        BearingOuter,
+        BearingAxis,
+        EngineBody,
+        EngineAxis,
+        ElectricMotorBody,
+        ElectricMotorAxis,
+        SlimeAlive,
+        RedSlimeAlive,
+        GreenSlimeAlive,
+        YellowSlimeAlive
     }
 }

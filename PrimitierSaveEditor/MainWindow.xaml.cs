@@ -90,6 +90,15 @@ namespace PrimitierSaveEditor
             playerSettings.Show();
         }
 
+        private void OpenModDataEdit(object sender, RoutedEventArgs e)
+        {
+            CollectionEditor modDataEditor = new CollectionEditor(SaveController.ExtData.EidLocTable)
+            {
+                Owner = this
+            };
+            modDataEditor.Show();
+        }
+
         private void MenuOpenExecuted(object sender, ExecutedRoutedEventArgs e) => openMenu.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
         private void MenuSaveExecuted(object sender, ExecutedRoutedEventArgs e) => saveMenu.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
         private void MenuSaveAsExecuted(object sender, ExecutedRoutedEventArgs e) => saveAsMenu.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
@@ -157,6 +166,8 @@ namespace PrimitierSaveEditor
                     worldSettingsMenu.IsEnabled = true;
                     showWaterCheck.IsEnabled = true;
 
+                    //extDataMenu.IsEnabled = SaveController.ExtData != null;
+
                     SelectionController.Selection = null;
 
                     viewport.Items.Clear();
@@ -176,7 +187,6 @@ namespace PrimitierSaveEditor
                     viewport.Camera.Position = SaveController.Save.saveEditorMetadata.cameraPos;
                     viewport.Camera.LookDirection = SaveController.Save.saveEditorMetadata.cameraDir;
                     viewport.Camera.UpDirection = new Vector3D(0, 1, 0);
-
                 }
                 finally
                 {
@@ -328,7 +338,7 @@ namespace PrimitierSaveEditor
             }
         }
 
-        private async void ClearTextInTime(Label label, int time)
+        private static async void ClearTextInTime(Label label, int time)
         {
             await Task.Delay(time);
             label.Content = null;

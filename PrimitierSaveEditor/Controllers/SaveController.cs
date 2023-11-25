@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PrimitierSaveEditor.Entities;
+using PrimitierSaveEditor.PMAPI;
+using SharpDX;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +16,7 @@ namespace PrimitierSaveEditor.Controllers
     public static class SaveController
     {
         public static SaveData Save { get; private set; }
+        public static ExtData ExtData { get; private set; }
 
         public static void OpenSaveFile(string filename)
         {
@@ -42,6 +45,9 @@ namespace PrimitierSaveEditor.Controllers
                 {
                     json = File.ReadAllText(filename);
                 }
+
+                if (json[0] == '#')
+                    ExtData = ParsePMAPIExtData(ref json);
 
                 Save = JsonConvert.DeserializeObject<SaveData>(json);
 
@@ -89,6 +95,9 @@ namespace PrimitierSaveEditor.Controllers
 
                 string json = JsonConvert.SerializeObject(Save, Formatting.None);
 
+                if (ExtData != null)
+                    SavePMAPIExtData(ref json);
+
                 if (!isUncompressed)
                 {
                     byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
@@ -115,6 +124,28 @@ namespace PrimitierSaveEditor.Controllers
 
                 GC.Collect(0, GCCollectionMode.Forced, true);
             }
+        }
+
+        private static ExtData ParsePMAPIExtData(ref string str)
+        {
+            int stopIndex = int.Parse(str.Substring(13, 8), System.Globalization.NumberStyles.HexNumber);
+            string extJson = str[21..stopIndex];
+
+            str = str[stopIndex..];
+
+            return JsonConvert.DeserializeObject<ExtData>(extJson);
+        }
+
+        private static void SavePMAPIExtData(ref string str)
+        {
+            string extJson = JsonConvert.SerializeObject(ExtData);
+
+            StringBuilder sb = new();
+            sb.Append("#PMAPI_EXTDAT");
+            sb.Append((21 + extJson.Length).ToString("X8"));
+            sb.Append(extJson);
+            sb.Append(str);
+            str = sb.ToString();
         }
     }
 }

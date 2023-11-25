@@ -3,7 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-using PrimitierSaveEditor.Interfaces;
+using System.Windows.Media.Media3D;
+using HelixToolkit.Wpf.SharpDX;
+using ISelectable = PrimitierSaveEditor.Interfaces.ISelectable;
+using System.Windows.Markup;
+using SharpDX;
 
 namespace PrimitierSaveEditor.Controllers
 {
@@ -40,23 +44,23 @@ namespace PrimitierSaveEditor.Controllers
             if (Selection == null)
             {
                 mainWindow.propsTable.ItemsSource = null;
-                if (PrevSelection is HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D)
+                if (PrevSelection is MeshGeometryModel3D)
                 {
-                    var sel = PrevSelection as HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D;
+                    var sel = PrevSelection as MeshGeometryModel3D;
                     sel.RenderWireframe = false;
                 }
                 PrevSelection = null;
                 return;
             }
 
-            if (Selection != PrevSelection && Selection is HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D)
+            if (Selection != PrevSelection && Selection is MeshGeometryModel3D)
             {
-                HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D cubeSel = Selection as HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D;
+                MeshGeometryModel3D cubeSel = Selection as MeshGeometryModel3D;
 
                 cubeSel.RenderWireframe = true;
-                if (PrevSelection != null && PrevSelection is HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D)
+                if (PrevSelection != null && PrevSelection is MeshGeometryModel3D)
                 {
-                    HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D prevSel = PrevSelection as HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D;
+                    MeshGeometryModel3D prevSel = PrevSelection as MeshGeometryModel3D;
                     prevSel.RenderWireframe = false;
                 }
 

@@ -72,6 +72,7 @@ namespace PrimitierSaveEditor.Entities.Primitier
                 new VisualProperty("lifeRatio", Data, Utils.ConvFloat, UpdateCube),
                 new VisualProperty("anchor", Data, Utils.ConvEnum, UpdateCube),
                 new VisualProperty("substance", Data, Utils.ConvEnum, UpdateCube),
+                new VisualProperty("name", Data, Utils.ConvEnum, UpdateCube),
                 new VisualProperty("connections", Data, Utils.ConvEnum, UpdateCube, true),
                 new VisualProperty("temperature", Data, Utils.ConvFloat, UpdateCube),
                 new VisualProperty("isBurning", Data, Utils.ConvBool, UpdateCube),

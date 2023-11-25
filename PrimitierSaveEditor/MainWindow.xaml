@@ -40,6 +40,9 @@
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="World Settings" Name="worldSettingsMenu" IsEnabled="False" Click="OpenWorldSettings"/>
+                <!--MenuItem Header="PMAPI Extended data" Name="extDataMenu" IsEnabled="False">
+                    <MenuItem Header="Mod data" Click="OpenModDataEdit"/>
+                </MenuItem!-->
             </MenuItem>
             <MenuItem Header="View">
                 <CheckBox Content="Display Water" IsChecked="True" x:Name="showWaterCheck" IsEnabled="False" Click="ShowWaterChanged"/>

@@ -82,6 +82,10 @@ namespace PrimitierSaveEditor.Entities
 
             public bool materialGenerated;
 
+            public bool skyGenerated;
+
+            public List<SkyTerrainData> skyTerrains;
+
             public int[] heightMap;
 
             public Mat[] materialMap;
@@ -101,6 +105,24 @@ namespace PrimitierSaveEditor.Entities
                 Sulfur = 6,
                 Rainforest = 7,
                 Fort = 8
+            }
+        }
+
+        [Serializable]
+        public class SkyTerrainData
+        {
+            public Type type;
+
+            public Vector3 pos;
+
+            public Vector3 scale;
+
+            public List<Vector2Int> ungeneratedChunks;
+
+            public enum Type
+            {
+                Island,
+                Moon
             }
         }
     }
