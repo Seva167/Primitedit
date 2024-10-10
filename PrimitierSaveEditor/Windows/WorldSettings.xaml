@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PrimitierSaveEditor"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="World Settings" Height="160" Width="250" ResizeMode="NoResize">
+        Title="World Settings" Height="190" Width="250" ResizeMode="NoResize">
     <Grid>
         <Menu Height="20" VerticalAlignment="Top">
             <MenuItem Header="Edit">
@@ -14,12 +14,17 @@
             </MenuItem>
         </Menu>
 
-        <Label Content="Primitier Version" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,29,0,0"/>
-        <TextBox x:Name="primVer" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="110,33,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="PrimVer_TextChanged"/>
-        <Label Content="Seed" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="seed" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="110,60,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Seed_TextChanged"/>
-        <Label Content="Time" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="time" HorizontalAlignment="Left" Margin="110,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Time_TextChanged"/>
+        <Label Content="Primitier Version" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,17,0,0"/>
+        <TextBox x:Name="primVer" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="109,21,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="PrimVer_TextChanged"/>
+        <Label Content="Seed" HorizontalAlignment="Left" Margin="9,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="seed" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="109,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Seed_TextChanged"/>
+        <Label Content="Time" HorizontalAlignment="Left" Margin="9,61,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="time" HorizontalAlignment="Left" Margin="109,65,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Time_TextChanged"/>
+        <Label Content="Creative Mode" HorizontalAlignment="Left" Margin="9,82,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="creativeMode" HorizontalAlignment="Left" Margin="108,88,0,0" VerticalAlignment="Top" Click="CreativeMode_Click"/>
+        <Label Content="Terrain Scale" HorizontalAlignment="Left" Margin="9,103,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="horScale" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="109,107,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" TextChanged="HorScale_TextChanged"/>
+        <TextBox x:Name="verScale" IsEnabled="{Binding ElementName=dangEditBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="169,107,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" TextChanged="VerScale_TextChanged"/>
 
     </Grid>
 </Window>

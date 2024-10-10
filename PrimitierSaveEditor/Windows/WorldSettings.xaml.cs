@@ -22,6 +22,9 @@ namespace PrimitierSaveEditor
             primVer.Text = $"{Save.version[0]}.{Save.version[1]}.{Save.version[2]}";
             seed.Text = Save.seed.ToString();
             time.Text = Save.time.ToString();
+            creativeMode.IsChecked = Save.isCreativeMode;
+            horScale.Text = Save.terrainHorizontalScale.ToString();
+            verScale.Text = Save.terrainVerticalScale.ToString();
         }
 
         private void PrimVer_TextChanged(object sender, TextChangedEventArgs e)
@@ -50,6 +53,30 @@ namespace PrimitierSaveEditor
         private void Time_TextChanged(object sender, TextChangedEventArgs e)
         {
             Save.time = float.TryParse(time.Text, out float res) ? res : Save.time;
+
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.IsDirty = true;
+        }
+
+        private void CreativeMode_Click(object sender, RoutedEventArgs e)
+        {
+            Save.isCreativeMode = creativeMode.IsChecked.Value;
+
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.IsDirty = true;
+        }
+
+        private void HorScale_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Save.terrainHorizontalScale = float.TryParse(horScale.Text, out float res) ? res : Save.terrainHorizontalScale;
+
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow.IsDirty = true;
+        }
+
+        private void VerScale_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Save.terrainVerticalScale = float.TryParse(verScale.Text, out float res) ? res : Save.terrainVerticalScale;
 
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow.IsDirty = true;

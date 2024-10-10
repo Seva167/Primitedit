@@ -11,7 +11,13 @@ namespace PrimitierSaveEditor.Entities
 
         public int[] version;
 
+        public bool isCreativeMode;
+
         public int seed;
+
+        public float terrainHorizontalScale = 1f;
+
+        public float terrainVerticalScale = 1f;
 
         public float time;
 

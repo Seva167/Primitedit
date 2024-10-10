@@ -80,7 +80,7 @@ namespace PrimitierSaveEditor.Entities
             Rubberwood = 31,
             RubberSeed = 32,
             RawRubber = 33,
-            Rubber = 34,
+            BouncyRubber = 34,
             ConiferWood = 35,
             Ice = 36,
             QuartzSand = 37,
@@ -102,7 +102,12 @@ namespace PrimitierSaveEditor.Entities
             Nitrocellulose = 53,
             RocketEngine = 54,
             MoonRock = 55,
-            MoonMonument = 56
+            MoonMonument = 56,
+            Transistor = 57,
+            TriggerSwitch = 58,
+            Quartz = 59,
+            Rubber = 60,
+            OreDeposit = 61
         }
 
         public enum SectionState
@@ -190,6 +195,8 @@ namespace PrimitierSaveEditor.Entities
         SlimeAlive,
         RedSlimeAlive,
         GreenSlimeAlive,
-        YellowSlimeAlive
+        YellowSlimeAlive,
+        TransistorNormal,
+        TransistorInverted
     }
 }
